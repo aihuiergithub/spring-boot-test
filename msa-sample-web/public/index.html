@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<div id="console"></div>
+
+<script src="js/jquery-2.1.1.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            method:"GET",
+            url:'/123',
+            headers:{
+              'Service-Name':'hello'
+            },
+            success:function (data) {
+                $("#console").text(data);
+            }
+        });
+    });
+</script>
+</body>
+</html>

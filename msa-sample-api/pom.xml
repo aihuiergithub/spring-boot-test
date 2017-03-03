@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>spring-boot-test</artifactId>
+        <groupId>me.wanghui</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>msa-sample-api</artifactId>
+    <packaging>jar</packaging>
+    <name>msa-sample-api</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>me.wanghui</groupId>
+            <artifactId>msa-framework</artifactId>
+            <version>${version}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <!--spring boot maven build plugin-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <finalName>${artifactId}-${version}</finalName>
+    </build>
+</project>
