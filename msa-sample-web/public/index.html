@@ -10,24 +10,62 @@
 <script src="js/jquery-2.1.1.js"></script>
 <script>
     $(function () {
-        $.ajax({
-            method:"GET",
-            url:'user/hello2',
-            headers:{
-              'Service-Name':'userSayHello'
+
+        /**
+         * 测试value路径
+         */
+         $.ajax({
+            method: "GET",
+            url: 'user/hello',
+            headers: {
+                'Service-Name': 'userSayHello'
             },
-            success:function (data) {
-                $("#console").append(data+'<br>');
+            success: function (data) {
+                $("#console").append(data + '<br>');
             }
         });
+        /**
+         * 测试path路径
+         */
         $.ajax({
-            method:"GET",
-            url:'user/hello',
-            headers:{
-                'Service-Name':'userSayHello'
+            method: "GET",
+            url: 'user/hello2',
+            headers: {
+                'Service-Name': 'userSayHello'
             },
-            success:function (data) {
-                $("#console").append(data+'<br>');
+            success: function (data) {
+                $("#console").append(data + '<br>');
+            }
+        });
+         /**
+         * 测试参数传递
+         * @type {string}
+         */
+        var userName = 'wangHui';
+        $.ajax({
+            method: "GET",
+            url: 'user/hello2/' + userName,
+            headers: {
+                'Service-Name': 'userSayHello'
+            },
+            success: function (data) {
+                $("#console").append(data + '<br>');
+            }
+        });
+
+        /**
+         * 测试put参数传递
+         * @type {string}
+         */
+        var userName = 'wangHui';
+        $.ajax({
+            method: "PUT",
+            url: 'user/hello_put/' + userName,
+            headers: {
+                'Service-Name': 'userSayHello'
+            },
+            success: function (data) {
+                $("#console").append(data + '<br>');
             }
         });
     });
