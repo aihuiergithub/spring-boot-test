@@ -48,6 +48,7 @@ public class RegistryZooListener implements ServletContextListener {
             String serviceName = info.getName();
             if (serviceName != null){
                 //注册服务
+//                System.out.println(serviceName);
                 serviceRegistry.register(serviceName, String.format("%s:%d",serverAddress,serverPort));
             }
         }

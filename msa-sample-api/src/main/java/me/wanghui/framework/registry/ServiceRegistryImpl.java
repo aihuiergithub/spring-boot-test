@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 public class ServiceRegistryImpl implements ServiceRegistry, Watcher {
 
     private static final String REGISTRY_PATH = "/registry";
-    private static final int SESSION_TIMEOUT = 5000;
+    private static final int SESSION_TIMEOUT = 15000;
 
     private Logger logger = Logger.getLogger(ServiceRegistryImpl.class);
 

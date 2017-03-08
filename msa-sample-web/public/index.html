@@ -12,12 +12,22 @@
     $(function () {
         $.ajax({
             method:"GET",
-            url:'/123',
+            url:'user/hello2',
             headers:{
-              'Service-Name':'hello'
+              'Service-Name':'userSayHello'
             },
             success:function (data) {
-                $("#console").text(data);
+                $("#console").append(data+'<br>');
+            }
+        });
+        $.ajax({
+            method:"GET",
+            url:'user/hello',
+            headers:{
+                'Service-Name':'userSayHello'
+            },
+            success:function (data) {
+                $("#console").append(data+'<br>');
             }
         });
     });
