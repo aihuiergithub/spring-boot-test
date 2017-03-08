@@ -56,4 +56,15 @@ public class ZookeeperRegisterController {
     public String hello_put(HttpServletRequest request, HttpSession session, @PathVariable String userName) {
         return "this is api put request set userName : " + userName;
     }
+
+    /**
+     * 子节点测试接口
+     * @param request
+     * @param session
+     * @return
+     */
+    @RequestMapping(name = "hello_child",value = "hello_child", method = RequestMethod.POST)
+    public String hello_child(HttpServletRequest request, HttpSession session) {
+        return "this is api post request for userSayHello#hello_child like user/hello_child";
+    }
 }

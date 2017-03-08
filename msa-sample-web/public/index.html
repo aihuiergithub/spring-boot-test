@@ -68,6 +68,21 @@
                 $("#console").append(data + '<br>');
             }
         });
+
+
+        /**
+         * 测试post访问子节点
+         */
+        $.ajax({
+            method: "POST",
+            url: 'user/hello_child',
+            headers: {
+                'Service-Name': 'userSayHello#hello_child'
+            },
+            success: function (data) {
+                $("#console").append(data + '<br>');
+            }
+        });
     });
 </script>
 </body>
